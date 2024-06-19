@@ -132,15 +132,16 @@ class _FormFillPageState extends State<FormFillPage> {
                     Map<String, dynamic> InfoMap = {
                       "Name": nametext.text,
                       "Age": agetext.text,
+                      "Id": Id,
                       "Location": locationtext.text
                     };
 
-                    // This function ensure that after adding the data to the databse a mesage will pop up saying "Data has been added successfully! 🎉"
+                    // This function ensure that after adding the data to the databse a mesage will pop up saying "Data has been added successfully!"
                     await DatabaseMethods()
                         .addDetails(InfoMap, Id)
                         .then((onValue) {
                           Fluttertoast.showToast(
-                              msg: "Data has been added successfully! 🎉",
+                              msg: "Data has been added successfully!",
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.CENTER,
                               timeInSecForIosWeb: 1,

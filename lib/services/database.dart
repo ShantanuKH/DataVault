@@ -14,7 +14,16 @@ class DatabaseMethods {
 
 // QuerySnapshot => Will help to read all the data from the respective databse collection
   Future<Stream<QuerySnapshot>> getDetails() async {
-    // This will take the data from the collection DataVault and will return us the data so that we can read the data 
+    // This will take the data from the collection DataVault and will return us the data so that we can read the data
     return await FirebaseFirestore.instance.collection("DataVault").snapshots();
+  }
+
+
+// This function will update the data 
+  Future updateDetail(String id, Map<String, dynamic> updateInfo) async {
+    return await FirebaseFirestore.instance
+        .collection("DataVault")
+        .doc(id)
+        .update(updateInfo);
   }
 }
