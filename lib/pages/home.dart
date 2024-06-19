@@ -60,7 +60,6 @@ class _homeState extends State<home> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Name : " + ds["Name"],
@@ -69,7 +68,7 @@ class _homeState extends State<home> {
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w500),
                             ),
-
+                            Spacer(),
                             // So that we can update the data easily
                             GestureDetector(
                               onTap: () {
@@ -83,6 +82,18 @@ class _homeState extends State<home> {
                                 color: Colors.orange,
                               ),
                             ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            GestureDetector(
+                                onTap: () async {
+                                  await DatabaseMethods()
+                                      .deleteDetail(ds["Id"]);
+                                },
+                                child: Icon(
+                                  Icons.delete,
+                                  color: Colors.orange,
+                                ))
                           ],
                         ),
 

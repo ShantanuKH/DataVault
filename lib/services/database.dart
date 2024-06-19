@@ -26,4 +26,13 @@ class DatabaseMethods {
         .doc(id)
         .update(updateInfo);
   }
+
+// To delete the data 
+
+  Future deleteDetail(String id) async {
+    return await FirebaseFirestore.instance
+        .collection("DataVault")
+        .doc(id)
+        .delete();
+  }
 }
