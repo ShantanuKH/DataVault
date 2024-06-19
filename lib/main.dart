@@ -8,7 +8,7 @@ void main() async{
   await Firebase.initializeApp();
   // This above two line will enable fireabse to enable or else we will not be able to add data to our database
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'CRUDCloud',
+      title: 'DataVault',
       theme: ThemeData(
        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

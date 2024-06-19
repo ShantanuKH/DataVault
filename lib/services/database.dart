@@ -9,6 +9,12 @@ class DatabaseMethods {
         .collection("DataVault")
         .doc(id)
         .set(InfoMap);
-        // The collection name will be CRUDCloud, To upload the specific InfoMap we use .set method
+    // The collection name will be CRUDCloud, To upload the specific InfoMap we use .set method
+  }
+
+// QuerySnapshot => Will help to read all the data from the respective databse collection
+  Future<Stream<QuerySnapshot>> getDetails() async {
+    // This will take the data from the collection DataVault and will return us the data so that we can read the data 
+    return await FirebaseFirestore.instance.collection("DataVault").snapshots();
   }
 }
