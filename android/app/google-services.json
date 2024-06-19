@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1010285769775",
+    "project_id": "datavault-fc957",
+    "storage_bucket": "datavault-fc957.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010285769775:android:8683e532c6b026086142da",
+        "android_client_info": {
+          "package_name": "com.example.data_vault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmtafeC87WlJCWF4VFwXBaFenF5GL88kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
