@@ -1,16 +1,28 @@
-# data_vault
+# DataVault
+  DataVault is a Flutter application that securely manages and stores personal data using Firebase Firestore for real-time database operations.
 
-A new Flutter project.
+###Features
+ - Create: Add new data securely.
+ - Read: Display stored data.
+ - Update: Modify existing data.
+ - Delete: Remove data securely.
 
-## Getting Started
+   
+<!--### Screenshots-->
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### Usage
+Add Data: Enter data into the form fields and click "Save".
+View Data: See the list of stored data on the DataVault page.
+Update Data: Tap on edit icon to edit/update the data.
+Delete Data: Tap on a delete icon to delete the data.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 📧 Contact
+
+### Shantanu Khadse
+  
+- GitHub: [ShantanuKH](https://github.com/ShantanuKH)
+- Email: shantanukhadse784@gmail.com  
+- LinkedIn: [shantanukhadse](https://www.linkedin.com/in/shantanu-khadse-a62585230/)  
