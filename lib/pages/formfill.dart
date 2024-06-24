@@ -39,125 +39,127 @@ class _FormFillPageState extends State<FormFillPage> {
           ],
         ),
       ),
-      body: Container(
-        margin:
-            EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0, bottom: 30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Name",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(10),
+      body: SingleChildScrollView(
+        child: Container(
+          margin:
+              EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0, bottom: 30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold),
               ),
-              child: TextField(
-                controller: nametext,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
+              SizedBox(
+                height: 5.0,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  controller: nametext,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              "Age",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(10),
+              SizedBox(
+                height: 20.0,
               ),
-              child: TextField(
-                controller: agetext,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
+              Text(
+                "Age",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  controller: agetext,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              "Location",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(10),
+              SizedBox(
+                height: 20.0,
               ),
-              child: TextField(
-                controller: locationtext,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
+              Text(
+                "Location",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  controller: locationtext,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 40.0,
-            ),
-            Center(
-              child: ElevatedButton(
-                  onPressed: () async {
-                    // To get the unique id for each detail we added randomAlphaNumeric which we get from random_string
-                    String Id = randomAlphaNumeric(10);
-                    // Whenever we will click on the button then the details will be added to the database
-                    Map<String, dynamic> InfoMap = {
-                      "Name": nametext.text,
-                      "Age": agetext.text,
-                      "Id": Id,
-                      "Location": locationtext.text
-                    };
-
-                    // This function ensure that after adding the data to the databse a mesage will pop up saying "Data has been added successfully!"
-                    await DatabaseMethods()
-                        .addDetails(InfoMap, Id)
-                        .then((onValue) {
-                          Fluttertoast.showToast(
-                              msg: "Data has been added successfully!",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.CENTER,
-                              timeInSecForIosWeb: 1,
-                              backgroundColor: Colors.blue,
-                              textColor: Colors.white,
-                              fontSize: 16.0
-                          );
-                        });
-                  },
-                  child: Text("Add",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ))),
-            )
-          ],
+              SizedBox(
+                height: 40.0,
+              ),
+              Center(
+                child: ElevatedButton(
+                    onPressed: () async {
+                      // To get the unique id for each detail we added randomAlphaNumeric which we get from random_string
+                      String Id = randomAlphaNumeric(10);
+                      // Whenever we will click on the button then the details will be added to the database
+                      Map<String, dynamic> InfoMap = {
+                        "Name": nametext.text,
+                        "Age": agetext.text,
+                        "Id": Id,
+                        "Location": locationtext.text
+                      };
+        
+                      // This function ensure that after adding the data to the databse a mesage will pop up saying "Data has been added successfully!"
+                      await DatabaseMethods()
+                          .addDetails(InfoMap, Id)
+                          .then((onValue) {
+                            Fluttertoast.showToast(
+                                msg: "Data has been added successfully!",
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.CENTER,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor: Colors.blue,
+                                textColor: Colors.white,
+                                fontSize: 16.0
+                            );
+                          });
+                    },
+                    child: Text("Add",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                        ))),
+              )
+            ],
+          ),
         ),
       ),
     );
